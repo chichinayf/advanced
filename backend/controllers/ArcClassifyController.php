@@ -3,19 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\ArcFiles;
-use app\models\search\ArcFilesSearchModel;
+use app\models\ArcClassify;
+use app\models\ArcClassifySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\Pagination;
-use app\models\ArcClassify;
-use app\models\search\ArcClassifyTypeFilesSearchModel;
 
 /**
- * 语音识别录音文件
+ * 语音文件的分类模型
  */
-class ArcluyinFilesController extends CommonController
+class ArcClassifyController extends CommonController
 {
     /**
      * @inheritdoc
@@ -33,40 +30,22 @@ class ArcluyinFilesController extends CommonController
     }
 
     /**
-     * Lists all ArcFiles models.
+     * Lists all ArcClassify models.
      * @return mixed
      */
     public function actionIndex()
     {
-    	$searchModel = new ArcFilesSearchModel();//实现分业查询
-    	$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-    	$query = $dataProvider->query;
-    	$countQuery = clone $query;
-    	$pages = new Pagination(['totalCount' => $countQuery->count()]);
-    	if(isset($_POST['pageSize'])){//设置了参数，就把参数给pageSize session
-    		setcookie('pageSize',$_POST['pageSize']);
-    	}
-    	if(!empty($_COOKIE['pageSize'])){
-    		$pages->pageSize = (int)$_COOKIE['pageSize'];
-    	}else{
-    		$pages->pageSize = 5;
-    	}
-    	$luyinType = ['type' => 1];//录音文件表示类型为1的
-    	$models = $query->offset($pages->offset)
-    	->limit($pages->limit)
-    	->where($luyinType)
-    	->all();
-    	$dataProvider->pagination = $pages;
-    	return $this->render('index', [
-    			'models' => $models,
-    			'searchModel' => $searchModel,
-    			'dataProvider' => $dataProvider,
-    			'pages' => $pages,
-    	]);
+        $searchModel = new ArcClassifySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
-     * Displays a single ArcFiles model.
+     * Displays a single ArcClassify model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -79,13 +58,13 @@ class ArcluyinFilesController extends CommonController
     }
 
     /**
-     * Creates a new ArcFiles model.
+     * Creates a new ArcClassify model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new ArcFiles();
+        $model = new ArcClassify();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -97,7 +76,7 @@ class ArcluyinFilesController extends CommonController
     }
 
     /**
-     * Updates an existing ArcFiles model.
+     * Updates an existing ArcClassify model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -117,7 +96,7 @@ class ArcluyinFilesController extends CommonController
     }
 
     /**
-     * Deletes an existing ArcFiles model.
+     * Deletes an existing ArcClassify model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -131,15 +110,15 @@ class ArcluyinFilesController extends CommonController
     }
 
     /**
-     * Finds the ArcFiles model based on its primary key value.
+     * Finds the ArcClassify model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return ArcFiles the loaded model
+     * @return ArcClassify the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = ArcFiles::findOne($id)) !== null) {
+        if (($model = ArcClassify::findOne($id)) !== null) {
             return $model;
         }
 

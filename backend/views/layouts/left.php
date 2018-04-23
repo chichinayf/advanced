@@ -100,31 +100,31 @@
     						         ]
     						    ],
     						    [
-        						    'label' => '录音文件识别',
+        						    'label' => '质检机器人',
         						    'icon' => 'dashboard',
         						    'url' => [
         						        '#'
         						    ],
     						        'items' => [
         						            [
-        						            'label' => '录音文件列表',
-        						            'icon' => 'fa fa-circle-o',
-        						            'url' => [
-        						                '/arc-files/index'
-        						            ]
+	        						            'label' => '录音文件列表',
+	        						            'icon' => 'fa fa-circle-o',
+	        						            'url' => [
+	        						                '/arcluyin-files/index'
+	        						            ]
         						            ],
         						            [
         						                'label' => '录音文件上传',
         						                'icon' => 'fa fa-circle-o',
         						                'url' => [
-        						                    '/arc-files/create' //多文件上传
+        						                    '/arcluyin-files/create' //多文件上传
         						                ]
         						            ],
         						            [
-        						                'label' => '文件上传（语音识别）',
+        						                'label' => '分类种类',
         						                'icon' => 'fa fa-circle-o',
         						                'url' => [
-        						                    '/arc-files/create-single' //单文件上传
+        						                    '/arc-classify/index' //多文件上传
         						                ]
         						            ],
     						         ]

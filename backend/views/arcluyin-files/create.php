@@ -1,19 +1,12 @@
 <?php
 
-use yii\helpers\Html;
-
-
-/* @var $this yii\web\View */
-/* @var $model app\models\ArcFiles */
-
-$this->title = 'Create Arc Files';
-$this->params['breadcrumbs'][] = ['label' => 'Arc Files', 'url' => ['index']];
+$this->title = '新增人工智能语音文件';
+$this->params['breadcrumbs'][] = ['label' => '语音识别文件', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="arc-files-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+	
+	<h4>可一次性多文件上传，然后在文件列表里面进行识别</h4>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

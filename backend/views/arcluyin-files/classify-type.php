@@ -9,8 +9,7 @@ use kartik\file\d;
 use yii\widgets\LinkPager;
 use yii\helpers\Url;
 use common\models\User;
-$this->title = '人工智能语音文件列表';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = '分类种类列表';
 ?>
 <div class="arc-files-index auto-wide">
 

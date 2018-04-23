@@ -15,7 +15,7 @@ use yii\web\UploadedFile;
 use yii\helpers\Html;
 
 /**
- * ArcFilesController implements the CRUD actions for ArcFiles model.
+ * 语音识别文件
  */
 class ArcFilesController extends CommonController
 {

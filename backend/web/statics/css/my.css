@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+/**
+ * 自动会添加滚动条
+ */
+.auto-wide {
+	word-wrap:break-word;
+	word-break:break-all;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: scroll;
+}
+.arc-arc {
+	width:100%;
+	height:auto;
+}
+.arc-font {
+    position: relative;
+	left: -20%;
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 40%;
+    height: 20%;
+    top: 20%;
+    margin-top: -16%;
+    z-index: 999;
+    text-align: center;
+    color: #fff;
+}
+.arc-microphone {
+	background-position-x: 50%;
+	background-position-y: 50%;
+	left: -5%;
+	background-repeat-x: no-repeat;
+	background-repeat-y: no-repeat;
+	cursor: pointer;
+	display: block;
+	margin-left: 50%;
+	margin-top: -18%;
+	top: -40%;
+	width:10%;
+	margin-right: 50%;
+	position: relative;
+	text-size-adjust: 100%;
+	z-index: 1 ;
+	-webkit-font-smoothing: antialiased;
+}
+/**
+ * 	以下是波浪线动画的效果
+ */
+.wave {
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.wave-c {
+  background: transparent;
+}
+
+
+

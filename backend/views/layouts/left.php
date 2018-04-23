@@ -100,18 +100,52 @@
     						         ]
     						    ],
     						    [
+        						    'label' => '录音文件识别',
+        						    'icon' => 'dashboard',
+        						    'url' => [
+        						        '#'
+        						    ],
+    						        'items' => [
+        						            [
+        						            'label' => '录音文件列表',
+        						            'icon' => 'fa fa-circle-o',
+        						            'url' => [
+        						                '/arc-files/index'
+        						            ]
+        						            ],
+        						            [
+        						                'label' => '录音文件上传',
+        						                'icon' => 'fa fa-circle-o',
+        						                'url' => [
+        						                    '/arc-files/create' //多文件上传
+        						                ]
+        						            ],
+        						            [
+        						                'label' => '文件上传（语音识别）',
+        						                'icon' => 'fa fa-circle-o',
+        						                'url' => [
+        						                    '/arc-files/create-single' //单文件上传
+        						                ]
+        						            ],
+    						         ]
+    						    ],
+    						    [ 
             						    'label' => '实时语音识别',
             						    'icon' => 'fa fa-circle-o',
         						        'items' => [
         						            [
         						                'label' => '本机识别',
         						                'icon' => 'circle-o',
-        						                'url' => 'realtime'
+        						            	'url' => [
+        						                    '/arc-files/realtime' //多文件上传
+        						                ]
         						            ],
         						            [
         						                'label' => '一句话识别衍生',
         						                'icon' => 'circle-o',
-        						                'url' => 'realtime'
+        						            	'url' => [
+        						            		'/arc-files/realtime' //多文件上传
+        						            	]
         						            ],
         						        ]
     						    ],
